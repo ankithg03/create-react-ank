@@ -36,3 +36,7 @@ and this project is to [CREATE A REACT APP](https://www.npmjs.com/package/create
 
 #### Changed
     - Added the condition for showing the existing value of package.json, if it does not exist and kept it empty
+### [1.0.6] - 2023-11-07
+
+#### Changed
+    - Updated the message to be shown for the npx command
