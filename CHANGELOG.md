@@ -31,3 +31,8 @@ and this project is to [CREATE A REACT APP](https://www.npmjs.com/package/create
 #### Added
     - Fixed the issue where the name was being asked multiple times.
     - Now, the user is prompted for each field (name, version, description, author, repository) only once, and the script updates package.json accordingly.
+
+### [1.0.4] - 2023-11-07
+
+#### Changed
+    - Added the condition for showing the existing value of package.json, if it does not exist and kept it empty
