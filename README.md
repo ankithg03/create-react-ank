@@ -1,10 +1,22 @@
 # Creating a boilerplate
 
+### Installation
+Install the package globally to use the npx command throughout the FS
+```
+npm i -g create-react-ank
+```
+
 ### Usage
 Clone the react-18-boilerplate repository to the specified directory.
 If no directory is provided, it will clone the repository to the current working directory.
 ```
-$ create-react-ank [directory]
+$ npx create-react-ank [directory]
+Repository cloned successfully.
+Enter a value for name in package.json (or press Enter to keep the existing value: [lerning-app]): my-react-app
+Enter a value for version in package.json (or press Enter to keep the existing value: [0.1.0]): 1.0.0
+Enter a value for description in package.json: 
+Enter a value for author in package.json: Ankith G
+Enter a value for repository in package.json: 
 ```
 
 
