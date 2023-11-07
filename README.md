@@ -1,4 +1,4 @@
-# Creating a boilerplate
+# Creating a react app with tailwind, typescript and react-router
 
 ### Installation
 Install the package globally to use the npx command throughout the FS
