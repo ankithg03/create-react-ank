@@ -41,7 +41,7 @@ and this project is to [CREATE A REACT APP](https://www.npmjs.com/package/create
 #### Changed
     - Updated the message to be shown for the npx command
 
-### [1.0.7] - 2023-11-07
+### [1.0.7] & [1.0.8] - 2023-11-07
 
 #### Changed
     - Updated the README.md
