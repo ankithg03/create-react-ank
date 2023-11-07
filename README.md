@@ -21,7 +21,7 @@ Enter a value for repository in package.json:
 
 
 
-Creating a clone of ankith's react boiler plate
+## NPM cmd Creating a clone of ankith's react boiler plate
 
 ```
 $ npm init
