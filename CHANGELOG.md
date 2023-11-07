@@ -26,3 +26,8 @@ and this project is to [CREATE A REACT APP](https://www.npmjs.com/package/create
     - Supported keeping existing values in package.json if no input provided by the user.
     - Enhanced user prompts by showing existing data in brackets for each field.
 
+### [1.0.3] - 2023-11-07
+
+#### Added
+    - Fixed the issue where the name was being asked multiple times.
+    - Now, the user is prompted for each field (name, version, description, author, repository) only once, and the script updates package.json accordingly.

@@ -36,26 +36,25 @@ if (cloneProcess.status === 0) {
   try {
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
 
-    const updatePackageJson = (field, defaultValue) => {
-      const existingValue = packageJson[field] || defaultValue;
-      readline.question(`Enter a value for ${field} in package.json (or press Enter to keep the existing value: [${existingValue}]): `, (input) => {
-        if (input.trim() !== '') {
-          packageJson[field] = input;
-        } else {
-          packageJson[field] = defaultValue;
-        }
-
-        if (field === 'repository') {
-          fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
-          console.log('Package.json updated with user-provided values.');
-          readline.close();
-        } else {
-          updatePackageJson('name', packageJson.name);
-        }
-      });
+    const updatePackageJson = (fields, index) => {
+      if (index < fields.length) {
+        const field = fields[index];
+        const existingValue = packageJson[field];
+        readline.question(`Enter a value for ${field} in package.json (or press Enter to keep the existing value: [${existingValue}]): `, (input) => {
+          if (input.trim() !== '') {
+            packageJson[field] = input;
+          }
+          updatePackageJson(fields, index + 1);
+        });
+      } else {
+        fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+        console.log('Package.json updated with user-provided values.');
+        readline.close();
+      }
     };
 
-    updatePackageJson('name', packageJson.name);
+    const fieldsToUpdate = ['name', 'version', 'description', 'author', 'repository'];
+    updatePackageJson(fieldsToUpdate, 0);
   } catch (error) {
     console.error('Error reading or updating package.json:', error);
   }
