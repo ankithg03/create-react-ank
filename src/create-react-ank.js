@@ -78,7 +78,6 @@ function removeGitConfigSections(filePath, sectionsToRemove) {
   const gitInitProcess = spawnSync('git', ['init', destinationDirectory]);
 
   if (gitInitProcess.status === 0) {
-    console.log(`New Git repository initialized in "${destinationDirectory}"`);
   } else {
     console.error('Error initializing a new Git repository.');
   }

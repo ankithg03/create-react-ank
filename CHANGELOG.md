@@ -51,7 +51,7 @@ and this project is to [CREATE A REACT APP](https://www.npmjs.com/package/create
 #### Changed
     - Updated the git config removal for the project
 
-### [1.0.10] - [1.0.16] - 2023-11-08
+### [1.0.10] - [1.0.17] - 2023-11-08
 
 #### Changed
     - Updated the create react-app messages
