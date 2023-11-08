@@ -76,5 +76,5 @@ function removeGitConfigSections(filePath, sectionsToRemove) {
   });
 
   fs.writeFileSync(filePath, content);
-  console.log('Removed specified sections from .git/config.');
+  console.log(`The project has been created in "${destinationDirectory}"`);
 }
