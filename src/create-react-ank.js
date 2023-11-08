@@ -60,6 +60,7 @@ if (cloneProcess.status === 0) {
 
     const fieldsToUpdate = ['name', 'version', 'description', 'author', 'repository'];
     updatePackageJson(fieldsToUpdate, 0);
+    process.exit(1);
   } catch (error) {
     console.error('Error reading or updating package.json:', error);
   }

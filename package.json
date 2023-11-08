@@ -1,6 +1,6 @@
 {
   "name": "create-react-ank",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Creating a clone of ankith's react boiler plate",
   "main": "src/create-react-ank.js",
   "bin": {
