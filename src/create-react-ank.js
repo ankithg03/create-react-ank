@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 const { spawnSync } = require('child_process');
+const fs = require('fs');
+
 const readline = require('readline').createInterface({
   input: process.stdin,
   output: process.stdout
@@ -32,7 +34,6 @@ if (cloneProcess.status === 0) {
   const packageJsonPath = `${destinationDirectory}/package.json`;
   const gitConfigPath = `${destinationDirectory}/.git/config`;
 
-  const fs = require('fs');
 
   try {
     const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
