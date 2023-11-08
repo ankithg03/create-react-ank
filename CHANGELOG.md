@@ -45,3 +45,8 @@ and this project is to [CREATE A REACT APP](https://www.npmjs.com/package/create
 
 #### Changed
     - Updated the README.md
+
+### [1.0.9] - 2023-11-08
+
+#### Changed
+    - Updated the git config removal for the 

@@ -30,6 +30,7 @@ if (cloneProcess.status === 0) {
   console.log('Repository cloned successfully.');
 
   const packageJsonPath = `${destinationDirectory}/package.json`;
+  const gitConfigPath = `${destinationDirectory}/.git/config`;
 
   const fs = require('fs');
 
@@ -40,16 +41,19 @@ if (cloneProcess.status === 0) {
       if (index < fields.length) {
         const field = fields[index];
         const existingValue = packageJson[field];
-        readline.question(`Enter a value for ${field} in package.json${existingValue!=undefined ? ` (or press Enter to keep the existing value: [${existingValue}])`: ''}: `, (input) => {
+        readline.question(`Enter a value for ${field} in package.json (or press Enter to keep the existing value: [${existingValue}]): `, (input) => {
           if (input.trim() !== '') {
             packageJson[field] = input;
           }
           updatePackageJson(fields, index + 1);
         });
       } else {
+        // Write the updated package.json
         fs.writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
         console.log('Package.json updated with user-provided values.');
-        readline.close();
+
+        // Remove [remote "origin"] and [branch "main"] from .git/config
+        removeGitConfigSections(gitConfigPath, ['remote "origin"', 'branch "main"']);
       }
     };
 
@@ -61,4 +65,16 @@ if (cloneProcess.status === 0) {
 } else {
   console.error('Error cloning repository.');
   process.exit(1);
+}
+
+function removeGitConfigSections(filePath, sectionsToRemove) {
+  let content = fs.readFileSync(filePath, 'utf8');
+
+  sectionsToRemove.forEach(section => {
+    const regex = new RegExp(`\\[${section}\\][^\\[]*`, 'g');
+    content = content.replace(regex, '');
+  });
+
+  fs.writeFileSync(filePath, content);
+  console.log('Removed specified sections from .git/config.');
 }
