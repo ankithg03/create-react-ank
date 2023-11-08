@@ -55,6 +55,7 @@ if (cloneProcess.status === 0) {
 
         // Remove [remote "origin"] and [branch "main"] from .git/config
         removeGitConfigSections(gitConfigPath, ['remote "origin"', 'branch "main"']);
+        
       }
     };
 
@@ -79,4 +80,5 @@ function removeGitConfigSections(filePath, sectionsToRemove) {
 
   fs.writeFileSync(filePath, content);
   console.log(`The project has been created in "${destinationDirectory}"`);
+  process.exit(1);
 }
