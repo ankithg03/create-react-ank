@@ -49,4 +49,4 @@ and this project is to [CREATE A REACT APP](https://www.npmjs.com/package/create
 ### [1.0.9] - 2023-11-08
 
 #### Changed
-    - Updated the git config removal for the 
+    - Updated the git config removal for the project
