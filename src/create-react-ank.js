@@ -41,7 +41,7 @@ if (cloneProcess.status === 0) {
       if (index < fields.length) {
         const field = fields[index];
         const existingValue = packageJson[field];
-        readline.question(`Enter a value for ${field} in package.json (or press Enter to keep the existing value: [${existingValue}]): `, (input) => {
+        readline.question(`Enter a value for ${field} in package.json${!!existingValue? ` (or press Enter to keep the existing value: [${existingValue}])` : ''}: `, (input) => {
           if (input.trim() !== '') {
             packageJson[field] = input;
           }
